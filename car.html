@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> car world - Premium Car Rental System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="stylesheet" href="car.css">
+
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4a72b38b-5f28-4fdb-b479-69f85204f43c.png" alt="DriveEasy Car Rental Logo - Modern blue car silhouette with company name" class="h-8 w-auto mr-2">
+                    <span class="text-xl font-bold text-blue-600">car world</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#vehicles" class="text-gray-700 hover:text-blue-600">Vehicles</a>
+                    <a href="#features" class="text-gray-700 hover:text-blue-600">Features</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-blue-600">Pricing</a>
+                    <a href="#support" class="text-gray-700 hover:text-blue-600">Support</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button onclick="openModal('loginModal')" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-user"></i> Login
+                    </button>
+                    <button onclick="openModal('registerModal')" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                        Sign Up
+                    </button>
+                    <button onclick="toggleDashboard()" class="bg-gray-200 p-2 rounded-lg hover:bg-gray-300">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white pt-24 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Rent Premium Cars</h1>
+                <p class="text-xl md:text-2xl mb-8">Experience luxury and convenience with our premium fleet</p>
+                <div class="bg-white rounded-lg p-6 shadow-xl max-w-2xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Pick-up Location</label>
+                            <input type="text" class="w-full p-2 border rounded" placeholder="City or Airport">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Pick-up Date</label>
+                            <input type="date" class="w-full p-2 border rounded">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Return Date</label>
+                            <input type="date" class="w-full p-2 border rounded">
+                        </div>
+                    </div>
+                    <button class="bg-blue-600 text-white w-full py-3 rounded-lg mt-4 hover:bg-blue-700">
+                        Search Vehicles
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicle Management Section -->
+    <section id="vehicles" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Premium Fleet</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Vehicle 1 -->
+                <div class="vehicle-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1e615961-a22d-4baa-aacb-79a493f404ef.png" alt="Luxury Mercedes-Benz S-Class sedan in metallic silver with premium interior and panoramic sunroof" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-2 py-1 rounded">
+                            Popular
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Mercedes-Benz S-Class</h3>
+                        <div class="flex items-center mb-4">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-600 ml-2">4.5 (128 reviews)</span>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <div>
+                                <span class="text-2xl font-bold text-blue-600">$100/day</span>
+                                <span class="text-gray-500 line-through ml-2">$200/day</span>
+                            </div>
+                            <button onclick="openModal('bookingModal')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                Book Now
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 text-sm text-gray-600">
+                            <div><i class="fas fa-car"></i> Automatic</div>
+                            <div><i class="fas fa-user"></i> 5 Seats</div>
+                            <div><i class="fas fa-snowflake"></i> A/C</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle 2 -->
+                <div class="vehicle-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6f3bf399-1852-4080-a105-e8250373e302.png" alt="BMW X5 SUV in deep blue with sporty design and luxury leather interior" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">BMW X5</h3>
+                        <div class="flex items-center mb-4">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 ml-2">4.8 (92 reviews)</span>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <div>
+                                <span class="text-2xl font-bold text-blue-600">$95/day</span>
+                            </div>
+                            <button onclick="openModal('bookingModal')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                Book Now
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 text-sm text-gray-600">
+                            <div><i class="fas fa-car"></i> Automatic</div>
+                            <div><i class="fas fa-user"></i> 7 Seats</div>
+                            <div><i class="fas fa-snowflake"></i> A/C</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle 3 -->
+                <div class="vehicle-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f5461f34-6c3b-420b-ba5b-0fe90ffcb5cd.png" alt="Tesla Model 3 electric car in pearl white with minimalist interior and large touchscreen display" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Tesla Model 3</h3>
+                        <div class="flex items-center mb-4">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 ml-2">4.2 (156 reviews)</span>
+                        </div>
+                        <div class="flex justify-between items-center mb-4">
+                            <div>
+                                <span class="text-2xl font-bold text-blue-600">$75/day</span>
+                            </div>
+                            <button onclick="openModal('bookingModal')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                Book Now
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 text-sm text-gray-600">
+                            <div><i class="fas fa-bolt"></i> Electric</div>
+                            <div><i class="fas fa-user"></i> 5 Seats</div>
+                            <div><i class="fas fa-snowflake"></i> A/C</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16">Why Choose FORCE CAR ?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center card-hover">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">24/7 Roadside Assistance</h3>
+                    <p class="text-gray-600">Round-the-clock support for any emergency on the road</p>
+                </div>
+                
+                <div class="text-center card-hover">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Best Price Guarantee</h3>
+                    <p class="text-gray-600">Find a lower price? We'll match it and give you 10% off</p>
+                </div>
+                
+                <div class="text-center card-hover">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Loyalty Rewards</h3>
+                    <p class="text-gray-600">Earn points on every rental and redeem for free days</p>
+                </div>
+                
+                <div class="text-center card-hover">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Premium Support</h3>
+                    <p class="text-gray-600">Dedicated customer service team for all your needs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Dashboard (Hidden by default) -->
+    <section id="adminDashboard" class="hidden py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Admin Dashboard</h2>
+            
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-blue-100 p-4 rounded-lg text-center">
+                        <div class="text-3xl font-bold text-blue-600">42</div>
+                        <div class="text-gray-600">Active Bookings</div>
+                    </div>
+                    <div class="bg-green-100 p-4 rounded-lg text-center">
+                        <div class="text-3xl font-bold text-green-600">$12,458</div>
+                        <div class="text-gray-600">Revenue Today</div>
+                    </div>
+                    <div class="bg-yellow-100 p-4 rounded-lg text-center">
+                        <div class="text-3xl font-bold text-yellow-600">18</div>
+                        <div class="text-gray-600">Vehicles Available</div>
+                    </div>
+                    <div class="bg-red-100 p-4 rounded-lg text-center">
+                        <div class="text-3xl font-bold text-red-600">3</div>
+                        <div class="text-gray-600">Maintenance Due</div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Recent Bookings</h3>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-3">
+                                <span>John Doe - Mercedes S-Class</span>
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded">Active</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span>Jane Smith - BMW X5</span>
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded">Upcoming</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Mike Johnson - Tesla Model 3</span>
+                                <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded">Completed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Maintenance Schedule</h3>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-3">
+                                <span>MB S-Class #1234</span>
+                                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded">Due in 2 days</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span>BMW X5 #5678</span>
+                                <span class="bg-red-100 text-red-800 px-2 py-1 rounded">Overdue</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Tesla Model 3 #9012</span>
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded">Scheduled</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">24/7 Customer Support</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center card-hover p-6 bg-blue-50 rounded-xl">
+                    <i class="fas fa-phone-alt text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Emergency Hotline</h3>
+                    <p class="text-gray-600 mb-4">Available 24/7 for roadside emergencies</p>
+                    <a href="tel:+1-800-555-0123" class="text-blue-600 font-bold">1-800-555-0123</a>
+                </div>
+
+                <div class="text-center card-hover p-6 bg-green-50 rounded-xl">
+                    <i class="fas fa-comments text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Live Chat</h3>
+                    <p class="text-gray-600 mb-4">Instant support through our chat system</p>
+                    <button onclick="openModal('chatModal')" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                        Start Chat
+                    </button>
+                </div>
+
+                <div class="text-center card-hover p-6 bg-purple-50 rounded-xl">
+                    <i class="fas fa-envelope text-4xl text-purple-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Email Support</h3>
+                    <p class="text-gray-600 mb-4">Get help within 2 hours via email</p>
+                    <a href="mailto:support@driveeasy.com" class="text-purple-600 font-bold">sohampatel1824@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">FORCE CAR</h3>
+                    <p class="text-gray-400">Premium car rental service with luxury vehicles and exceptional customer service.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#vehicles" class="text-gray-400 hover:text-white">Vehicles</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-white">Features</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white">Pricing</a></li>
+                        <li><a href="#support" class="text-gray-400 hover:text-white">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Contact Info</h4>
+                    <p class="text-gray-400">123 sindhu bhavan</p>
+                    <p class="text-gray-400">road ,ahedabad 36001</p>
+                    <p class="text-gray-400">car world.com</p>
+                    <p class="text-gray-400">1-800-555-0123</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe for exclusive deals</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="bg-gray-700 text-white px-4 py-2 rounded-l">
+                        <button class="bg-blue-600 px-4 py-2 rounded-r hover:bg-blue-700">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2024Carworld Rental. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2 class="text-2xl font-bold mb-6">Login to Your Account</h2>
+            <form>
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2">Email</label>
+                    <input type="email" class="w-full p-2 border rounded" placeholder="Enter your email">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 mb-2">Password</label>
+                    <input type="password" class="w-full p-2 border rounded" placeholder="Enter your password">
+                </div>
+                <button type="button" class="bg-blue-600 text-white w-full py-2 rounded hover:bg-blue-700">
+                    Login
+                </button>
+                <p class="text-center mt-4">
+                    <a href="#" class="text-blue-600">Forgot password?</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2 class="text-2xl font-bold mb-6">Create New Account</h2>
+            <form>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-gray-700 mb-2">First Name</label>
+                        <input type="text" class="w-full p-2 border rounded" placeholder="First name">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Last Name</label>
+                        <input type="text" class="w-full p-2 border rounded" placeholder="Last name">
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2">Email</label>
+                    <input type="email" class="w-full p-2 border rounded" placeholder="Enter your email">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2">Phone Number</label>
+                    <input type="tel" class="w-full p-2 border rounded" placeholder="Phone number">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 mb-2">Password</label>
+                    <input type="password" class="w-full p-2 border rounded" placeholder="Create password">
+                </div>
+                <button type="button" class="bg-blue-600 text-white w-full py-2 rounded hover:bg-blue-700">
+                    Create Account
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('bookingModal')">&times;</span>
+            <h2 class="text-2xl font-bold mb-6">Book Your Vehicle</h2>
+            <form>
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2">Selected Vehicle</label>
+                    <div class="bg-gray-100 p-3 rounded">
+                        <strong>Mercedes-Benz S-Class</strong> - $89/day
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Pick-up Date</label>
+                        <input type="date" class="w-full p-2 border rounded">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Return Date</label>
+                        <input type="date" class="w-full p-2 border rounded">
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 mb-2">Pick-up Location</label>
+                    <select class="w-full p-2 border rounded">
+                        <option>Miami International Airport</option>
+                        <option>Downtown Miami</option>
+                        <option>Miami Beach</option>
+                        <option>Fort Lauderdale Airport</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 mb-2">Additional Services</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2"> Additional Insurance ($15/day)
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2"> GPS Navigation ($10/day)
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2"> Child Seat ($25)
+                        </label>
+                    </div>
+                </div>
+                <div class="bg-blue-50 p-4 rounded mb-6">
+                    <h3 class="font-bold mb-2">Total Estimate: $267</h3>
+                    <p class="text-sm text-gray-600">3 days rental + additional services</p>
+                </div>
+                <button type="button" class="bg-blue-600 text-white w-full py-2 rounded hover:bg-blue-700">
+                    Proceed to Payment
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Chat Support Modal -->
+    <div id="chatModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('chatModal')">&times;</span>
+            <h2 class="text-2xl font-bold mb-6">Live Chat Support</h2>
+            <div class="bg-gray-100 p-4 rounded-lg mb-4" style="height: 300px; overflow-y: auto;">
+                <div class="text-center text-gray-500">
+                    <p>Connecting you with our support team...</p>
+                </div>
+            </div>
+            <div class="flex">
+                <input type="text" placeholder="Type your message..." class="flex-1 p-2 border rounded-l">
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-r hover:bg-blue-700">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+<script src="car .js"></script>
+   
+</body>
+</html>
+
